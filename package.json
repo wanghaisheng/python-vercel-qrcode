@@ -1,0 +1,45 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "fastapi-dev": "pip3 install -r requirements.txt && python3 -m uvicorn api.main:app --reload",
+    "next-dev": "next dev",
+    "dev": "concurrently \"npm run next-dev\" \"npm run fastapi-dev\"",
+    "next-build": "next build",
+    "fastapi-build": "pip3 install -r requirements.txt",
+    "build": "npm run next-build && npm run fastapi-build",
+    "next-start": "next start",
+    "start": "concurrently \"npm run next-start\" \"npm run fastapi-start\"",
+    "fastapi-start": "uvicorn api.main:app --reload",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@amplitude/analytics-browser": "^2.6.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.7",
+    "@mui/material": "^5.15.7",
+    "axios": "^1.6.7",
+    "concurrently": "^8.2.2",
+    "dayjs": "^1.11.10",
+    "next": "14.1.0",
+    "next-auth": "^4.24.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-intersection-observer": "^9.7.0",
+    "react-responsive-masonry": "^2.1.7",
+    "react-share": "^5.0.3",
+    "react-swipeable": "^7.0.1",
+    "server-only": "^0.0.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  },
+  "engines": {
+    "node": ">= 21.6.1",
+    "npm": ">= 10.2.4"
+  }
+}
